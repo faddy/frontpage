@@ -1,6 +1,6 @@
 *pyc
 .idea/*
-venv/*
 .project
 .pydevproject
 frontpage/settings.py
+/venv
