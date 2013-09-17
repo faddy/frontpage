@@ -2,5 +2,5 @@
 .idea/*
 .project
 .pydevproject
-frontpage/settings.py
 /venv
+frontpage/local_settings.py
