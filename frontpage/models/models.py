@@ -12,8 +12,10 @@ class Category(models.Model):
     
     
 class Source(models.Model):
-    
-    source_type = models.CharField(max_length=10)  # TODO: change this to enum: rss / url / something else?
+
+    source_choices = ('other', 'rss', 'url')
+   
+    source_type = models.CharField(max_length=10, choices=source_choices, default='url')
     name = models.CharField(max_length=50)
     domain = models.CharField(max_length=100)
     source = models.CharField(max_length=100)    # actual url or rss url
@@ -23,7 +25,9 @@ class Source(models.Model):
     
 class Post(models.Model):
     
+    post_choices = ('image', 'video', 'url')
+
     title = models.CharField(max_length=200)
     short_description = models.CharField(max_length=500)
-    type = models.CharField(max_length=10)    # TODO: change this to enum
-    
+    post_type = models.CharField(max_length=10, choices=post_choices, default='url')
+    action = models.CharField(max_length=10)
